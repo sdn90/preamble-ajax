@@ -9,7 +9,7 @@ const headers = {
   'X-Requested-With': 'XMLHttpRequest'
 }
 
-export default function getProduct(handle) {
+export function getProduct(handle) {
   return fetch(`/products/${handle}`, {
     method: 'GET',
     credentials: 'include',
@@ -17,7 +17,7 @@ export default function getProduct(handle) {
   });
 }
 
-export default function addCart(options) {
+export function addCart(options) {
   return fetch(`/cart/add.js`, {
     method: 'POST',
     credentials: 'include',
@@ -26,7 +26,7 @@ export default function addCart(options) {
   });
 }
 
-export default function getCart() {
+export function getCart() {
   return fetch('/cart.js', {
     method: 'GET',
     credentials: 'include',
@@ -34,7 +34,7 @@ export default function getCart() {
   });
 }
 
-export default function updateCart(options) {
+export function updateCart(options) {
   return fetch('/cart/update.js', {
     method: 'POST',
     credentials: 'include',
@@ -43,7 +43,7 @@ export default function updateCart(options) {
   });
 }
 
-export default function changeCart(options) {
+export function changeCart(options) {
   return fetch('/cart/change.js', {
     method: 'POST',
     credentials: 'include',
@@ -52,7 +52,7 @@ export default function changeCart(options) {
   });
 }
 
-export default function clearCart() {
+export function clearCart() {
   return fetch('/cart/clear.js', {
     method: 'POST',
     credentials: 'include',
@@ -60,7 +60,7 @@ export default function clearCart() {
   });
 }
 
-export default function getShipping(options) {
+export function getShipping(options) {
   let url = '/cart/shipping_rates.json?' +
               'shipping_address[zip]=' + options.zip
             + '&shipping_address[country]=' + options.country
